@@ -9,10 +9,21 @@ import Foundation
 
 class DataService {
     
-    let workouts = [
+    static let instance = DataService()
     
-        Workout(imageName: <#T##String#>, title: <#T##String#>, duration: <#T##String#>)
-        
+    private let workouts = [
+        Workout(imageName: "pushup01", title: "Push-Up", duration: "30 sec"),
+        Workout(imageName: "situp01", title: "Sit-Ups", duration: "45 sec"),
+        Workout(imageName: "squat01", title: "Squats", duration: "60 sec")
     ]
+    
+    func getWorkouts() -> [Workout] {
+        return workouts
+    }
+    
+  //  let stretches = [
+    
+ //   ]
+    
     
 }
