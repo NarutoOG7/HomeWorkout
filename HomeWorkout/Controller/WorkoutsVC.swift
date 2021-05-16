@@ -10,8 +10,10 @@ import UIKit
 class WorkoutsVC: UIViewController {
 
     @IBOutlet weak var workoutsCollectionView: UICollectionView!
+    @IBOutlet weak var switchExercise: UISwitch!
     
     private(set) public var workouts = [Workout]()
+    private(set) public var stretches = [Workout]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,21 @@ class WorkoutsVC: UIViewController {
     func initWorkouts(workout: Workout) {
         workouts = DataService.instance.getWorkouts()
     }
+    func initStretches(stretch: Workout) {
+        stretches = DataService.instance.getStretches()
+    }
 
+    @IBAction func switchPressed(_ sender: UISwitch) {
+
+        
+        reloadData()
+    }
+    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.workoutsCollectionView.reloadData()
+        }
+    }
 }
 
 //MARK: - CollectionView DataSource
@@ -36,34 +52,29 @@ extension WorkoutsVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WorkoutCell", for: indexPath) as? WorkoutCell {
-            let workout = DataService.instance.getWorkouts()[indexPath.row]
-            cell.updateViews(workout: workout)
+            if switchExercise.isOn {
+                let workout = DataService.instance.getWorkouts()[indexPath.row]
+                cell.updateViews(workout: workout)
+            } else {
+                let stretch = DataService.instance.getStretches()[indexPath.row]
+                cell.updateViews(workout: stretch)
+            }
             return cell
         } else {
             return WorkoutCell()
-        } /*
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WorkoutCell", for: indexPath) as! WorkoutCell
-        let workout = workouts[indexPath.row]
-        cell.updateViews(workout: workout)
-        return cell */
+        }
     }
-    
-    
-    
 }
 
 //MARK: - CollectionView Delegate
 
 extension WorkoutsVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = view.bounds.width / 2 - 20
-        let height: CGFloat = width + 20
-//        let area: CGFloat = view.bounds.width * view.bounds.height
-//        let count: CGFloat = CGFloat(DataService.instance.getWorkouts().count)
-//        let section: CGFloat = area / count
-//        let width: CGFloat = section / 2
-//        let height: CGFloat = section / 2
-        return CGSize(width: width, height: height)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let width: CGFloat = view.bounds.width / 2 - 20
+//        let height: CGFloat = width + 20
+//        return CGSize(width: width, height: height)
+//    }
 }
+
