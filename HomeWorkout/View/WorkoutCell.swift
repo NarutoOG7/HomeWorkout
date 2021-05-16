@@ -25,10 +25,10 @@ class WorkoutCell: UICollectionViewCell {
     func updateViews(workout: Workout) {
         workoutImage.image = UIImage(named: workout.imageName)
         workoutTitle.text = workout.title
-        wourkoutDuration.text = workout.duration
+//        wourkoutDuration.text = workout.duration
         
        // contentView.layer.cornerRadius = 5.0
-        orangeView.layer.cornerRadius = 10.0
-        greyView.layer.cornerRadius = 10.0
+        orangeView.layer.cornerRadius = 82.0
+        greyView.layer.cornerRadius = 82.0
     }
 }
