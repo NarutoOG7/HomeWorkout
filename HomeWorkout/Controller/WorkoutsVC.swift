@@ -76,5 +76,11 @@ extension WorkoutsVC: UICollectionViewDelegateFlowLayout {
 //        let height: CGFloat = width + 20
 //        return CGSize(width: width, height: height)
 //    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = view.bounds.width / 2 - 6
+        let height: CGFloat = 300
+        return CGSize(width: width, height: height)
+    }
 }
 

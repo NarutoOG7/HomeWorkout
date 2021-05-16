@@ -27,8 +27,8 @@ class WorkoutCell: UICollectionViewCell {
         workoutTitle.text = workout.title
         wourkoutDuration.text = workout.duration
         
-        contentView.layer.cornerRadius = 5.0
-        orangeView.layer.cornerRadius = 5.0
-        greyView.layer.cornerRadius = 5.0
+       // contentView.layer.cornerRadius = 5.0
+        orangeView.layer.cornerRadius = 10.0
+        greyView.layer.cornerRadius = 10.0
     }
 }
