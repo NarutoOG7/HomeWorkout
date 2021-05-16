@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class DataService {
+    
+    let workouts = [
+    
+        Workout(imageName: <#T##String#>, title: <#T##String#>, duration: <#T##String#>)
+        
+    ]
+    
+}

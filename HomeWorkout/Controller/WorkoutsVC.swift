@@ -19,3 +19,22 @@ class WorkoutsVC: UIViewController {
 
 }
 
+//MARK: - CollectionView DataSource
+
+extension WorkoutsVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
+    
+}
+
+//MARK: - CollectionView Delegate
+
+extension WorkoutsVC: UICollectionViewDelegate {
+    
+}
