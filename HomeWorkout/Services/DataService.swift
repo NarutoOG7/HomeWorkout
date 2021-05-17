@@ -11,7 +11,7 @@ class DataService {
     
     static let instance = DataService()
     
-    private let workouts = [
+     let workouts = [
         Workout(imageName: "pushup01", title: "Push-Up", duration: "30 sec"),
         Workout(imageName: "situp", title: "Sit-Ups", duration: "45 sec"),
         Workout(imageName: "squat01", title: "Squats", duration: "60 sec"),
@@ -23,7 +23,7 @@ class DataService {
         return workouts
     }
     
-    private let stretches = [
+     let stretches = [
     Workout(imageName: "stretch01", title: "Leaning Mountain", duration: "60 sec"),
         Workout(imageName: "stretch02", title: "Lunge", duration: "60 sec"),
         Workout(imageName: "stretch03", title: "Scorpion", duration: "60 sec"),

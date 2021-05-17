@@ -41,6 +41,7 @@ class WorkoutsVC: UIViewController {
         DispatchQueue.main.async {
             self.workoutsCollectionView.reloadData()
         }
+        
     }
 }
 
