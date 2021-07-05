@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C92F346626915C6300E807B7 /* WorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92F346526915C6300E807B7 /* WorkoutSections.swift */; };
+		C92F3469269161C500E807B7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92F3468269161C500E807B7 /* Category.swift */; };
 		C9F3C2C12650CEAE00CDB080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3C2C02650CEAE00CDB080 /* AppDelegate.swift */; };
 		C9F3C2C32650CEAE00CDB080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3C2C22650CEAE00CDB080 /* SceneDelegate.swift */; };
 		C9F3C2C52650CEAE00CDB080 /* WorkoutsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3C2C42650CEAE00CDB080 /* WorkoutsVC.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C92F346526915C6300E807B7 /* WorkoutSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSections.swift; sourceTree = "<group>"; };
+		C92F3468269161C500E807B7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C9F3C2BD2650CEAE00CDB080 /* HomeWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F3C2C02650CEAE00CDB080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9F3C2C22650CEAE00CDB080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F3C2D92650D38700CDB080 /* Workout.swift */,
+				C92F3468269161C500E807B7 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F3C2D62650D15700CDB080 /* WorkoutCell.swift */,
+				C92F346526915C6300E807B7 /* WorkoutSections.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +190,8 @@
 				C9F3C2E12650D52C00CDB080 /* DataService.swift in Sources */,
 				C9F3C2DA2650D38700CDB080 /* Workout.swift in Sources */,
 				C9F3C2D72650D15700CDB080 /* WorkoutCell.swift in Sources */,
+				C92F346626915C6300E807B7 /* WorkoutSections.swift in Sources */,
+				C92F3469269161C500E807B7 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,13 +22,13 @@
                                 <color key="backgroundColor" red="0.59382864238514488" green="0.59970813389390865" blue="0.59970813389390865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hxy-Gf-1fl">
                                     <size key="itemSize" width="202" height="253"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WorkoutCell" id="BHs-ZF-sAy" customClass="WorkoutCell" customModule="HomeWorkout" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="202" height="253"/>
+                                        <rect key="frame" x="0.0" y="50" width="202" height="253"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6f7-C6-3zj">
                                             <rect key="frame" x="0.0" y="0.0" width="202" height="253"/>
@@ -111,6 +111,63 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="WorkoutSections" id="8ES-yi-1Et" customClass="WorkoutSectionView" customModule="HomeWorkout" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="qRv-Rk-bDH">
+                                            <rect key="frame" x="16.5" y="10" width="381" height="30"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOB-Ne-5Q9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
+                                                    <state key="normal" title="ARMS"/>
+                                                    <connections>
+                                                        <action selector="anyTapped:" destination="8ES-yi-1Et" eventType="touchUpInside" id="Ma1-5t-6Ws"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKa-EM-teq">
+                                                    <rect key="frame" x="83" y="0.0" width="49" height="30"/>
+                                                    <state key="normal" title="BACK"/>
+                                                    <connections>
+                                                        <action selector="anyTapped:" destination="8ES-yi-1Et" eventType="touchUpInside" id="Lnv-LQ-pbM"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RF4-A3-yCb">
+                                                    <rect key="frame" x="166" y="0.0" width="49" height="30"/>
+                                                    <state key="normal" title="CHEST"/>
+                                                    <connections>
+                                                        <action selector="anyTapped:" destination="8ES-yi-1Et" eventType="touchUpInside" id="OYd-f9-8Xm"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COv-DV-Px3">
+                                                    <rect key="frame" x="249" y="0.0" width="49" height="30"/>
+                                                    <state key="normal" title="CORE"/>
+                                                    <connections>
+                                                        <action selector="anyTapped:" destination="8ES-yi-1Et" eventType="touchUpInside" id="mYk-0B-cYb"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPb-I9-4JR">
+                                                    <rect key="frame" x="332" y="0.0" width="49" height="30"/>
+                                                    <state key="normal" title="LEGS"/>
+                                                    <connections>
+                                                        <action selector="anyTapped:" destination="8ES-yi-1Et" eventType="touchUpInside" id="ebr-Rp-GaT"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qRv-Rk-bDH" firstAttribute="centerY" secondItem="8ES-yi-1Et" secondAttribute="centerY" id="cdG-xb-v4h"/>
+                                        <constraint firstItem="qRv-Rk-bDH" firstAttribute="centerX" secondItem="8ES-yi-1Et" secondAttribute="centerX" id="eNV-lY-VJJ"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="armsButton" destination="AOB-Ne-5Q9" id="0Tg-2E-OTi"/>
+                                        <outlet property="backButton" destination="bKa-EM-teq" id="XZi-oQ-ZnG"/>
+                                        <outlet property="chestButton" destination="RF4-A3-yCb" id="aoG-Zh-LE6"/>
+                                        <outlet property="coreButton" destination="COv-DV-Px3" id="zBd-jf-za4"/>
+                                        <outlet property="legsButton" destination="lPb-I9-4JR" id="WPY-Rh-naT"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
