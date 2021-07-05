@@ -12,6 +12,7 @@ class WorkoutsVC: UIViewController {
     @IBOutlet weak var workoutsCollectionView: UICollectionView!
     
     private(set) public var workouts = [Workout]()
+    var displayedCategory = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class WorkoutsVC: UIViewController {
     }
 
     func initWorkouts(workout: Workout) {
-        workouts = DataService.instance.getWorkouts()
+        workouts = DataService.instance.getWorkouts(forCategory: displayedCategory)
     }
 
 }
@@ -31,13 +32,18 @@ class WorkoutsVC: UIViewController {
 //MARK: - CollectionView DataSource
 
 extension WorkoutsVC: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataService.instance.getWorkouts().count
+        return DataService.instance.getWorkouts(forCategory: displayedCategory).count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WorkoutCell", for: indexPath) as? WorkoutCell {
-            let workout = DataService.instance.getWorkouts()[indexPath.row]
+            let workout = DataService.instance.getWorkouts(forCategory: displayedCategory)[indexPath.row]
             cell.updateViews(workout: workout)
             return cell
         } else {
@@ -49,7 +55,16 @@ extension WorkoutsVC: UICollectionViewDataSource {
         return cell */
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.sectionHeadersPinToVisibleBounds = true
+        }
+        let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "WorkoutSections", for: indexPath)
+        if let sectionHeaderView = supplementaryView as? WorkoutSectionView {
+            sectionHeaderView.delegate = self
+        }
+        return supplementaryView
+     }
     
 }
 
@@ -66,4 +81,16 @@ extension WorkoutsVC: UICollectionViewDelegateFlowLayout {
 //        let height: CGFloat = section / 2
         return CGSize(width: width, height: height)
     }
+}
+
+
+//MARK: - WorkoutSectionView Delegate
+
+extension WorkoutsVC: WorkoutSectionViewDelegate {
+    func reloadCVData(_ title: String) {
+        displayedCategory = title
+        workoutsCollectionView.reloadData()
+    }
+    
+    
 }
